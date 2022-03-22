@@ -38,7 +38,7 @@ scTE builds genome indices for the fast alignment of reads to genes and TEs. The
 
 ```bash
 $ module purge
-$ module load module load miniconda
+$ module load miniconda
 $ source activate ~/scTE
 $ scTE_build -g mm10 # Mouse
 $ scTE_build -g hg38 # Human
