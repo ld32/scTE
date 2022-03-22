@@ -20,9 +20,14 @@ Installation
 scTE works with python >=3.6.
 
 ```bash
+# install miniconda if you don't have it: https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html
+$ module purge
+$ module load miniconda
+$ conda create -y --prefix ~/scTE -c bioconda -c anaconda -c conda-forge python==3.6.0 argparse scipy pandas numpy anndata 
+$ source activate ~/scTE
 $ git clone https://github.com/JiekaiLab/scTE.git
 $ cd scTE
-$ python setup.py install
+$ python setup.py install --prefix ~/scTE
 ```
 
 Usage
@@ -32,6 +37,9 @@ Usage
 scTE builds genome indices for the fast alignment of reads to genes and TEs. These indices can be automatically generated using the commands:
 
 ```bash
+$ module purge
+$ module load module load miniconda
+$ source activate ~/scTE
 $ scTE_build -g mm10 # Mouse
 $ scTE_build -g hg38 # Human
 $ scTE_build -g panTro6 # Chimpanzee
